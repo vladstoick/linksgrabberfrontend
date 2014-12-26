@@ -6,6 +6,7 @@ Prerequisites
 ```javascript
 sudo npm install -g bower
 sudo npm install -g grunt-cli
+gem install compass
 ```
 
 Installing the required packages for the app
