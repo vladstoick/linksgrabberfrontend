@@ -1,4 +1,4 @@
-<div infinite-scroll='loadNextPage()' infinite-scroll-disabled='server.busy' infinite-scroll-distance='1'>
+<div infinite-scroll='loadNextPage()' infinite-scroll-disabled='busy || isDone' infinite-scroll-distance='1'>
 	<div ng-repeat="link in links">
 		<div class="link">
 			<div class="container">
@@ -13,8 +13,9 @@
 				 	<p class="date">Sent on {{link.sent_at | date:'medium'}}</p>
 			 	</div>
 		 	</div>
-	 	<div class="divider">
-	 	</div>
+	 		<div class="divider"></div>
+		</div>
 	</div>
-	<div ng-show='server.busy'>Loading data...</div>
+	<div ng-show='busy' id="linksLoader">Loading data...</div>
+	<div ng-show="isDone" id="loadFinished">These are all the links you have recieved</div>
 </div>

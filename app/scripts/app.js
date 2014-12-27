@@ -8,6 +8,9 @@
  *
  * Main module of the application.
  */
+
+var apiURL = 'https://da3fa.ngrok.com/';
+
 angular
   .module('linksgrabberApp', [
     'infinite-scroll',
@@ -36,7 +39,7 @@ angular
       });
       $authProvider.facebook({
         clientId: '399179793579362',
-        url:'https://da3fa.ngrok.com/auth/facebook'
+        url: apiURL + '/auth/facebook'
       });
   });
 

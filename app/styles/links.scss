@@ -7,7 +7,9 @@
 		color: lightgrey;
 	}
 	a{
+		max-width: 960px;
 		font-size: 22px;
+		word-wrap: break-word;
 	}
 	img.avatar{
 
@@ -21,4 +23,11 @@
 		background-color: lightgrey;
 		margin: 10px 0px;
 	}
+}
+#linksLoader{
+	text-align: center;
+	
+}
+#loadFinished{
+	text-align: center;
 }

@@ -10,12 +10,13 @@
 angular.module('linksgrabberApp')
   .controller('LinksCtrl', function ($scope, $http, $auth) {
     $scope.links = [];
-    var busy = false;
-    var totalpages;
+    $scope.busy = false;
+    $scope.isDone = false;
+    var totalpages = -1;
     var page = 1;
     function loadData(page){
         console.log('bla');
-        $http.get('https://da3fa.ngrok.com/users/'+$auth.getPayload().userId+'?page='+page)
+        $http.get(apiURL + '/users/'+$auth.getPayload().userId+'?page='+page)
     		.success(function(data) {
                 totalpages = data.paging.total_pages;
         		data = data.links.map(function(link){
@@ -24,16 +25,20 @@ angular.module('linksgrabberApp')
         			return link;
         		});
         		$scope.links= $scope.links.concat(data);
-                busy = false;
+                $scope.busy = false;
       		});
     }
     $scope.loadNextPage = function(){
         
-        if(busy === true || page>totalpages){
+        if($scope.busy === true || $scope.isDone){
+            return;
+        }
+        if(page>totalpages && totalpages!==-1){
+            $scope.isDone = true;
             return;
         }
         console.log('bla');
-        busy = true;
+        $scope.busy = true;
         loadData(page);
         page++;
     };
