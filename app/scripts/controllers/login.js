@@ -8,9 +8,10 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('LoginCtrl', function ($scope, $auth) {
+  .controller('LoginCtrl', function ($scope, $auth, $rootScope) {
     $scope.authenticate = function(provider) {
-      $auth.authenticate(provider);
-      console.log($auth.getToken());
+      $auth.authenticate(provider).then(function(){
+      	$rootScope.$emit('authenticateStateChanged',true);
+      });
     };
   });

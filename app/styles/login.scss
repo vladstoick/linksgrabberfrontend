@@ -1,0 +1,14 @@
+#loginForm{
+	text-align: center;
+}
+#loginButton{
+ 	width: auto;
+  	max-width: 100%;
+ 	margin: 0 auto;
+  	background-color: #3b5998;
+ 	color: white;
+ 	.fa{
+ 		padding-right: 5px;
+ 		border-right: 1px solid rgba(0, 0, 0, 0.5);
+ 	}
+}
