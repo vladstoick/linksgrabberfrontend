@@ -36,7 +36,6 @@ angular
       });
       $authProvider.facebook({
         clientId: '399179793579362',
-        redirectUri: window.location.origin +'' ,
         url:'https://da3fa.ngrok.com/auth/facebook'
       });
   });
