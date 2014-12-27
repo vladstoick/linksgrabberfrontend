@@ -1,5 +1,5 @@
-<div infinite-scroll='loadNextPage()' infinite-scroll-disabled='busy || isDone' infinite-scroll-distance='1'>
-	<div ng-repeat="link in links">
+<div infinite-scroll='links.nextPage()' infinite-scroll-disabled='links.isBusy || links.isDone' infinite-scroll-distance='1'>
+	<div ng-repeat="link in links.items">
 		<div class="link">
 			<div class="container">
 				<div class="col-md-1">
@@ -16,6 +16,6 @@
 	 		<div class="divider"></div>
 		</div>
 	</div>
-	<div ng-show='busy' id="linksLoader">Loading data...</div>
-	<div ng-show="isDone" id="loadFinished">These are all the links you have recieved</div>
+	<div ng-show='links.isBusy' id="linksLoader">Loading data...</div>
+	<div ng-show="linnks.isDone" id="loadFinished">These are all the links you have recieved</div>
 </div>

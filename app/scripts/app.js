@@ -9,8 +9,6 @@
  * Main module of the application.
  */
 
-var apiURL = 'https://da3fa.ngrok.com/';
-
 angular
   .module('linksgrabberApp', [
     'infinite-scroll',
@@ -20,7 +18,8 @@ angular
     'ngTouch',
     'satellizer'
   ])
-  .config(function ($routeProvider, $authProvider) {
+  .constant('apiURL', 'https://da3fa.ngrok.com/')
+  .config(function ($routeProvider, $authProvider, apiURL) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
