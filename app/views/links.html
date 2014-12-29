@@ -1,7 +1,7 @@
-<div infinite-scroll='links.nextPage()' infinite-scroll-disabled='links.isBusy || links.isDone' infinite-scroll-distance='1'>
+<div infinite-scroll='links.nextPage()' infinite-scroll-disabled='links.isBusy || links.isDone' infinite-scroll-distance='1' class="container">
 	<div ng-repeat="link in links.items">
 		<div class="link">
-			<div class="container">
+			<div class="row">
 				<div class="col-md-1">
 			 		<img ng-src="{{link.sender.facebookImgUrl}}" class="avatar">
 			 	</div>

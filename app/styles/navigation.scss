@@ -26,13 +26,17 @@
 				color:white;
 			}
 		}
-		.mobileDropdown{
-			display: none;
-		}
+
 	}
-	@media(max-width: 768px){
-		.desktopDropdown{
-			display: none;
-		}
+
+}
+@media(max-width: 768px){
+	li.desktopDropdown{
+		display: none;
+	}
+}
+@media (min-width: 769px) {
+	li.mobileDropdown{
+		display: none;
 	}
 }
