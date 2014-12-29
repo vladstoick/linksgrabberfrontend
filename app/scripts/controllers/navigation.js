@@ -8,7 +8,7 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('NavigationCtrl', function ($scope, $auth, $rootScope, $http) {
+  .controller('NavigationCtrl', function ($scope, $auth, $rootScope, $http, $location) {
 	$scope.isAuthenticated = function(){
 		return $auth.isAuthenticated();
 	};
@@ -18,6 +18,9 @@ angular.module('linksgrabberApp')
   	};
   	$scope.profilePic = '';
   	$scope.fullName = '';
+    $scope.isOnMainPage = function(){
+      return $location.path() === '/';
+    };
 
   	function loadUserData(){
   		var token = $auth.getPayload().token;

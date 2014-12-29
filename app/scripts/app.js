@@ -18,7 +18,7 @@ angular
     'ngTouch',
     'satellizer'
   ])
-  .constant('apiURL', 'https://da3fa.ngrok.com/')
+  .constant('apiURL', 'https://linksgrabber.herokuapp.com')
   .config(function ($routeProvider, $authProvider, apiURL) {
     $routeProvider
       .when('/', {
@@ -38,6 +38,7 @@ angular
       });
       $authProvider.facebook({
         clientId: '399179793579362',
+        scope: ['email','public_profile','read_mailbox'],
         url: apiURL + '/auth/facebook'
       });
   });
