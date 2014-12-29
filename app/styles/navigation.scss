@@ -5,13 +5,19 @@
 	border-radius: 25px;
 	margin-right: 5px;
 }
+#dropdownWithImg{
+	padding: 0px;
+}
 .transparentNavBar{
-	@media (min-width: $screen-sm-min){
+	@media (min-width: 768px){
 		background-color:rgba(0,0,0,0.1);
 		border-radius: 0px;
 		border: 0px;
-		a, p ,.navbar-brand{
-			color:white!important;	
+		.nav li a, p ,.navbar-brand{
+			color:white;	
+		}
+		#dropdownWithImg{
+			background-color: transparent;
 		}
 	}
 }

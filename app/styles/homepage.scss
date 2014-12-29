@@ -1,15 +1,13 @@
 .homeSplash{
-	background-image: url('../images/splash.jpg');
+	background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/splash.jpg');
 	background-size:   cover;  
 	height: 600px;
-	@media (min-width: $screen-sm-min){
-		margin-top: -72px;
-	}
-	@media (max-width: $screen-sm-min){
+	margin-top: -72px;
+	@media (max-width: 768px){
 		margin-top: -20px;
 	}
 	background-position: center center;  
-	
+	margin-bottom: 20px;
 	.inner{
 		margin: 0 auto;
 		position: relative;
@@ -19,5 +17,18 @@
 		color: white;
 		.title{
 		}
+	}
+}
+.homepage-description{
+	.img-description{
+		width: auto;
+		height: 150px;
+		margin: 0 auto 15px auto;
+	}
+	.icon-description{
+		font-size: 150px;
+		margin-bottom: 15px;
+		text-align: center;
+		width: 100%;
 	}
 }
