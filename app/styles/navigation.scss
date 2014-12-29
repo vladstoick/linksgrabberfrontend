@@ -6,10 +6,12 @@
 	margin-right: 5px;
 }
 .transparentNavBar{
-	background-color:rgba(0,0,0,0.1);
-	border-radius: 0px;
-	border: 0px;
-	a, p ,.navbar-brand{
-		color:white!important;	
+	@media (min-width: $screen-sm-min){
+		background-color:rgba(0,0,0,0.1);
+		border-radius: 0px;
+		border: 0px;
+		a, p ,.navbar-brand{
+			color:white!important;	
+		}
 	}
 }

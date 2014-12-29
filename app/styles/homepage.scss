@@ -2,7 +2,13 @@
 	background-image: url('../images/splash.jpg');
 	background-size:   cover;  
 	height: 600px;
-	margin-top: -72px;
+	@media (min-width: $screen-sm-min){
+		margin-top: -72px;
+	}
+	@media (max-width: $screen-sm-min){
+		margin-top: -20px;
+	}
+	background-position: center center;  
 	
 	.inner{
 		margin: 0 auto;
