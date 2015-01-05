@@ -25,19 +25,25 @@ angular.module('linksgrabberApp')
         isDone = true;
         return;
       }
-      $http.get(apiURL + '/users/' + $auth.getPayload().userId+ '?page=' + page)
-        .success(function(data) {
-            totalPages = data.paging.total_pages;
-            data = data.links.map(function(link){
-              link.sender.facebookImgUrl = 'http://graph.facebook.com/v2.2/' +
-              link.sender.facebook_id + '/picture?width=100&height=100';    
-              return link;
-            });
-            for(var i = 0; i < data.length ; i++){
-              items.push(data[i]);
-            }
-            isBusy = false;
+      $http({
+        method : 'GET',
+        url : apiURL + '/users/me/links',
+        params : {
+          auth_token : $auth.getPayload().userAuth,
+          page : page
+        }
+      }).success(function(data) {
+        totalPages = data.paging.total_pages;
+        data = data.links.map(function(link){
+          link.sender.facebookImgUrl = 'http://graph.facebook.com/v2.2/' +
+          link.sender.facebook_id + '/picture?width=100&height=100';    
+          return link;
         });
+        for(var i = 0; i < data.length ; i++){
+          items.push(data[i]);
+        }
+        isBusy = false;
+      });
       page++;
     }
 

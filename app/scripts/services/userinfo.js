@@ -28,6 +28,7 @@ angular.module('linksgrabberApp')
     user.login = function (provider){
       $auth.authenticate(provider).then(function(){
         loadData(); 
+        console.log($auth.getPayload());
       });
     };
 
