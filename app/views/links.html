@@ -1,20 +1,6 @@
 <div infinite-scroll='links.nextPage()' infinite-scroll-disabled='links.isBusy || links.isDone' infinite-scroll-distance='1' class="container">
 	<div ng-repeat="link in links.items">
-		<div class="link">
-			<div class="row">
-				<div class="col-md-1">
-			 		<img ng-src="{{link.sender.facebookImgUrl}}" class="avatar">
-			 	</div>
-			 	<div class="col-md-11">
-		 			<div class="linkTitle">
-					 	<p class="sender_name">{{link.sender.name}} sent you</p>
-					 	<a ng-href="{{link.text}}">{{link.text}}</a>
-				 	</div>
-				 	<p class="date">Sent on {{link.sent_at | date:'medium'}}</p>
-			 	</div>
-		 	</div>
-	 		<div class="divider"></div>
-		</div>
+		<linkrow data="link"></linkrow>
 	</div>
 	<div ng-show='links.isBusy' id="linksLoader">Loading data...</div>
 	<div ng-show="linnks.isDone" id="loadFinished">These are all the links you have recieved</div>
