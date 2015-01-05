@@ -12,38 +12,27 @@
 angular
   .module('linksgrabberApp', [
     'infinite-scroll',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
+    'ui.router',
     'satellizer'
   ])
   .constant('apiURL', 'https://linksgrabber.herokuapp.com')
-  .config(function ($routeProvider, $authProvider, apiURL) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      })
-      .when('/links', {
-        templateUrl: 'views/links.html',
-        controller: 'LinksCtrl'
-      })
-      .when('/conversations', {
-        templateUrl: 'views/conversations.html',
-        controller: 'LinksCtrl'
-      })
-      .when('#', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+  .config(function ($stateProvider, $authProvider, apiURL) {
+      $stateProvider
+        .state('home',{
+          url: '/',
+          templateUrl : 'views/main.html',
+          controller : 'MainCtrl'
+        })
+        .state('links',{
+          url: '/links',
+          templateUrl : 'views/links.html',
+          controller : 'LinksCtrl'
+        })
+        .state('login',{
+          url: '/login',
+          templateUrl : 'views/login.html',
+          controller : 'LoginCtrl'
+        });
       $authProvider.facebook({
         clientId: '399179793579362',
         scope: ['email','public_profile','read_mailbox'],
