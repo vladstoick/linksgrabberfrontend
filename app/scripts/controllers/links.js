@@ -8,7 +8,10 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('LinksCtrl', function ($scope, $http, $auth, Links) {
-    $scope.links = Links;
+  .controller('LinksCtrl', function ($scope, Links, UserInfo, $location) {
+  	if(UserInfo.isAuthenticated() === false){
+  		$location.path('/login');
+  	}
+	$scope.links = Links;
     
   });
