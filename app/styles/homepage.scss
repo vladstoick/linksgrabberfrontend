@@ -17,8 +17,21 @@
 		color: white;
 		.title{
 		}
+		#startUsingButton{
+			padding: 20px;
+			margin-top: 5px;
+			color: white;
+			font-size: 22px;
+			background-color: transparent;
+			&:hover{
+				background-color:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+			}
+		}
 	}
 }
+
+
+
 .homepage-description{
 	.img-description{
 		width: auto;

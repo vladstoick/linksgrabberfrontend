@@ -9,13 +9,9 @@
  */
 angular.module('linksgrabberApp')
   .factory('Links', function ($http, $auth, apiURL) {
-    // var Links = function(){
-    //   items = [];
-    //   busy = false;
-    //   isDone = false;
-    //   page = 1;
-    //   totalPages = -1;
-    // };
+
+
+
     
     var items = [];
     var isBusy = false;

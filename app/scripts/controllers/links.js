@@ -10,4 +10,5 @@
 angular.module('linksgrabberApp')
   .controller('LinksCtrl', function ($scope, $http, $auth, Links) {
     $scope.links = Links;
+    
   });

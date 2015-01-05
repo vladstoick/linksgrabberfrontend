@@ -33,6 +33,14 @@ angular
         templateUrl: 'views/links.html',
         controller: 'LinksCtrl'
       })
+      .when('/conversations', {
+        templateUrl: 'views/conversations.html',
+        controller: 'LinksCtrl'
+      })
+      .when('#', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

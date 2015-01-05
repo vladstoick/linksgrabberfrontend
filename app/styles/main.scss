@@ -1,12 +1,14 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "custom-bootstrap-variables";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
 
 @import "links";
 @import "navigation";
 @import "login";
 @import "homepage";
+
 body{
 	margin-bottom: 20px;
 }
