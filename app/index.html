@@ -22,7 +22,7 @@
 
 
     <!-- Add your site or application content here -->
-    <div ng-include="'views/navigation.html'" ng-controller="NavigationCtrl"></div>
+    <div ng-include="'common/navigation.html'" ng-controller="NavigationCtrl"></div>
     <div ui-view=""></div>
     
 
@@ -67,16 +67,23 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/links.js"></script>
-        <script src="scripts/controllers/navigation.js"></script>
-        <script src="scripts/services/links.js"></script>
-        <script src="scripts/controllers/conversations.js"></script>
-        <script src="scripts/services/userinfo.js"></script>
-        <script src="scripts/directives/linkrow.js"></script>
-        <script src="scripts/directives/inlineimageview.js"></script>
+        <script src="app.js"></script>
+
+        <script src="links/links.js"></script>
+        <script src="links/linkrow.js"></script>
+        <script src="links/inlineimageview.js"></script>
+       
+
+        <script src="common/main.js"></script>
+        <script src="common/login.js"></script>
+        
+        <script src="common/navigation.js"></script>
+        
+        <script src="common/conversations.js"></script>
+
+        <script src="services/links.js"></script>
+        <script src="services/userinfo.js"></script>
+        
         <!-- endbuild -->
 </body>
 </html>
