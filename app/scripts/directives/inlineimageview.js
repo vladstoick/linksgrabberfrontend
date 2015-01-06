@@ -10,8 +10,8 @@ angular.module('linksgrabberApp')
   .directive('inlineimageview', function () {
   	function isImage(url){
   		var acceptRegex = /^[^#]+?\.(gif|jpe?g|png)(?:[?&#_].*|$)/i;
-        var results = acceptRegex.exec(url);
-        return results !== null;
+      var results = acceptRegex.exec(url);
+      return results !== null;
   	}
     return {
       	templateUrl : 'views/directives/inlineimageview.html',
@@ -26,7 +26,7 @@ angular.module('linksgrabberApp')
           });
         },
       	link: function postLink(scope) {
-      		scope.shouldShowImage = false;
+      		scope.shouldShowImage = scope.iivshouldshowimages;
       		scope.url = '';
         	if(isImage(scope.iivsrc)){
            		scope.url = scope.iivsrc;
