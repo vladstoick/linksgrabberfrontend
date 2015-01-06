@@ -16,9 +16,15 @@ angular.module('linksgrabberApp')
     return {
       	templateUrl : 'views/directives/inlineimageview.html',
       	scope: {
-      		iivsrc : '='
+      		iivsrc : '=',
+          iivshouldshowimages : '='
       	},
       	restrict: 'E',
+        controller : function ($scope) {
+          $scope.$watch('iivshouldshowimages', function(newValue){
+            $scope.shouldShowImage = newValue;
+          });
+        },
       	link: function postLink(scope) {
       		scope.shouldShowImage = false;
       		scope.url = '';

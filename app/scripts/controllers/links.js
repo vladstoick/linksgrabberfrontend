@@ -13,5 +13,5 @@ angular.module('linksgrabberApp')
   		$location.path('/login');
   	}
 	$scope.links = Links;
-    
+    $scope.shouldShowAllImages = false;
   });

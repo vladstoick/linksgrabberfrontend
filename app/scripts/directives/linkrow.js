@@ -10,9 +10,10 @@ angular.module('linksgrabberApp')
   .directive('linkrow', function () {
     return {
     	scope: {
-    		data : '='
+    		data : '=',
+    		shouldshowallimages : '='
     	},
       	templateUrl: 'views/directives/linkrow.html',
-      	restrict: 'E',
+      	restrict: 'E'
     };
   });
