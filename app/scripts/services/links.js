@@ -37,6 +37,15 @@ angular.module('linksgrabberApp')
         data = data.links.map(function(link){
           link.sender.facebookImgUrl = 'http://graph.facebook.com/v2.2/' +
           link.sender.facebook_id + '/picture?width=100&height=100';    
+          //TODO move this
+          var acceptRegex = /^[^#]+?\.(gif|jpe?g|png)(?:[?&#_].*|$)/i;
+          var results = acceptRegex.exec(link.text);
+          if(results !== null){
+            link.isImage = true;
+          } else {
+            link.isImage = false;
+          }
+          //link.isImage = acceptRegex.exec(link.text) !== null;
           return link;
         });
         for(var i = 0; i < data.length ; i++){
@@ -46,6 +55,8 @@ angular.module('linksgrabberApp')
       });
       page++;
     }
+
+    
 
     return {
       nextPage : nextPage,

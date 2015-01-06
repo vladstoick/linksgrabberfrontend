@@ -6,9 +6,10 @@
 	 	<div class="col-md-11">
  			<div class="linkTitle">
 			 	<p class="sender_name">{{::data.sender.name}} sent you</p>
-			 	<a ng-href="{{::link.text}}">{{data.text}}</a>
+			 	<a ng-href="{{::data.text}}">{{data.text}}</a>
 		 	</div>
 		 	<p class="date">Sent on {{::data.sent_at | date:'medium'}}</p>
+		 	<inlineimageview iivsrc="data.text"></inlineimageview>
 	 	</div>
  	</div>
 	<div class="divider"></div>
