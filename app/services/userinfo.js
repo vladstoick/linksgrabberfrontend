@@ -20,7 +20,6 @@ angular.module('linksgrabberApp')
       $auth.logout();
       user.profilePic = '';
       user.fullName = '';
-      console.log('aaa');
     };
 
     user.isAuthenticated = $auth.isAuthenticated;
