@@ -13,7 +13,8 @@ angular
   .module('linksgrabberApp', [
     'infinite-scroll',
     'ui.router',
-    'satellizer'
+    'satellizer',
+    'youtube-embed'
   ])
   .constant('apiURL', 'https://linksgrabber.herokuapp.com')
   .config(function ($stateProvider, $authProvider, apiURL, $urlRouterProvider) {

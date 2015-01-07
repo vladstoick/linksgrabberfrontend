@@ -11,7 +11,7 @@ angular.module('linksgrabberApp')
     return {
     	scope: {
     		data : '=',
-    		shouldshowallimages : '='
+    		shouldshowallmedia : '='
     	},
       	templateUrl: 'links/linkrow.html',
       	restrict: 'E'
