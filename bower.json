@@ -6,7 +6,6 @@
     "json3": "^3.3.0",
     "es5-shim": "^4.0.0",
     "satellizer": "~0.8.7",
-    "font-awesome": "~4.2.0",
     "ngInfiniteScroll": "~1.2.0",
     "bootstrap-sass-official": "~3.3.1",
     "angular-ui-router": "~0.2.13",
