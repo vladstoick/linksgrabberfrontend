@@ -35,7 +35,7 @@ angular.module('linksgrabberApp')
       }).success(function(data) {
         totalPages = data.paging.total_pages;
         data = data.links.map(function(link){
-          link.sender.facebookImgUrl = 'http://graph.facebook.com/v2.2/' +
+          link.sender.facebookImgUrl = 'https://graph.facebook.com/v2.2/' +
           link.sender.facebook_id + '/picture?width=100&height=100';    
           //TODO move this
           var acceptRegex = /^[^#]+?\.(gif|jpe?g|png)(?:[?&#_].*|$)/i;
