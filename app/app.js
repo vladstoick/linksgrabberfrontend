@@ -29,6 +29,11 @@ angular
           templateUrl : 'links/links.html',
           controller : 'LinksCtrl'
         })
+        .state('conversations',{
+          url: '/conversations',
+          templateUrl: 'conversations/conversations.html',
+          controller : 'ConversationsCtrl'
+        })
         .state('login',{
           url: '/login',
           templateUrl : 'common/login.html',

@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc service
- * @name linksgrabberApp.links
+ * @name linksgrabberApp.conversations
  * @description
- * # links
+ * # conversations
  * Factory in the linksgrabberApp.
  */
 angular.module('linksgrabberApp')
-  .factory('Links', function ($http, UserInfo, apiURL) { 
-    var items = [];
+  .factory('Conversations', function (UserInfo, $http, apiURL) {
+    var conversations = [];
     var isBusy = false;
     var isDone = false;
     var page = 1;
@@ -23,20 +23,16 @@ angular.module('linksgrabberApp')
       }
       $http({
         method : 'GET',
-        url : apiURL + '/users/me/links',
+        url : apiURL + '/users/me/threads',
         params : {
           auth_token : UserInfo.apiToken,
           page : page
         }
       }).success(function(data) {
         totalPages = data.paging.total_pages;
-        data = data.links.map(function(link){
-          link.sender.facebookImgUrl = 'https://graph.facebook.com/v2.2/' +
-          link.sender.facebook_id + '/picture?width=100&height=100';    
-          return link;
-        });
+        data = data.threads;
         for(var i = 0; i < data.length ; i++){
-          items.push(data[i]);
+          conversations.push(data[i]);
         }
         isBusy = false;
       });
@@ -49,6 +45,7 @@ angular.module('linksgrabberApp')
       nextPage : nextPage,
       isDone : isDone,
       isBusy : isBusy,
-      items: items
+      conversations : conversations
     };
+
   });

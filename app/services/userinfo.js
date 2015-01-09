@@ -13,13 +13,16 @@ angular.module('linksgrabberApp')
 
     var user = {
       fullName : '',
-      profilePic : ''
+      profilePic : '',
+      facebookToken : '',
+      apiToken: '',
     };
 
     user.logout = function(){
       $auth.logout();
       user.profilePic = '';
       user.fullName = '';
+      user.authToken = '';
     };
 
     user.isAuthenticated = $auth.isAuthenticated;
@@ -31,9 +34,10 @@ angular.module('linksgrabberApp')
     };
 
     function loadData(){
-      var token = $auth.getPayload().token;
-      user.profilePic = 'https://graph.facebook.com/v2.2/me/picture?width=100&height=100&access_token='+token;   
-      $http.get('https://graph.facebook.com/v2.2/me?fields=name&access_token='+token).success(function(data){
+      user.authToken = $auth.getPayload().token;
+      user.apiToken = $auth.getPayload().userAuth;
+      user.profilePic = 'https://graph.facebook.com/v2.2/me/picture?width=100&height=100&access_token='+user.authToken;   
+      $http.get('https://graph.facebook.com/v2.2/me?fields=name&access_token='+user.authToken).success(function(data){
         user.fullName = data.name;
         // $rootScope.$broadcast('userDataLoaded');
       });

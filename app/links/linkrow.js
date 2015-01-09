@@ -13,7 +13,7 @@ angular.module('linksgrabberApp')
     		data : '=',
     		shouldshowallmedia : '='
     	},
-      	templateUrl: 'links/linkrow.html',
-      	restrict: 'E'
+      templateUrl: 'links/linkrow.html',
+      restrict: 'E'
     };
   });

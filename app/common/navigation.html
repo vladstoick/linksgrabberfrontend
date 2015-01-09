@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/#/">Linksgrabber</a>
+      <a class="navbar-brand" ui-sref="home">Linksgrabber</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li ng-show="user.isAuthenticated()"><a href="#links">Links</a></li>
-        <li ng-show="user.isAuthenticated()"><a href="#conversations">Conversations</a></li>
-        <li ng-hide="user.isAuthenticated()"><a href="#login" class="login">Login</a></li>
+        <li ng-show="user.isAuthenticated()"><a ui-sref="links">Links</a></li>
+        <li ng-show="user.isAuthenticated()"><a ui-sref="conversations">Conversations</a></li>
+        <li ng-hide="user.isAuthenticated()"><a ui-sref="login" class="login">Login</a></li>
         <li class="dropdown desktopDropdown">
           <a class="dropdown-toggle" id="dropdownWithImg" data-toggle="dropdown" role="button" aria-expanded="false" ng-show="user.isAuthenticated()">
             <img id="profilePicture" ng-src="{{user.profilePic}}"/>
