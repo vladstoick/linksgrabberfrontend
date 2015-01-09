@@ -9,7 +9,8 @@
  */
 angular.module('linksgrabberApp')
   .controller('LinksCtrl', function ($scope, Links, UserInfo, $location) {
-  	if(UserInfo.isAuthenticated() === false){
+  	
+  	if(UserInfo.isAuthenticated === false){
   		$location.path('/login');
   	}
 	$scope.links = Links;

@@ -16,19 +16,21 @@ angular.module('linksgrabberApp')
       profilePic : '',
       facebookToken : '',
       apiToken: '',
-    };
+    };6
 
     user.logout = function(){
       $auth.logout();
       user.profilePic = '';
       user.fullName = '';
       user.authToken = '';
+      user.isAuthenticated = false;
     };
 
-    user.isAuthenticated = $auth.isAuthenticated;
+    user.isAuthenticated = false;
 
     user.login = function (provider){
       $auth.authenticate(provider).then(function(){
+        user.isAuthenticated = true;
         loadData(); 
       });
     };
@@ -44,7 +46,8 @@ angular.module('linksgrabberApp')
       
     }
 
-    if(user.isAuthenticated() === true){
+    if($auth.isAuthenticated() === true){
+      user.isAuthenticated = true;
       loadData();
     }
 

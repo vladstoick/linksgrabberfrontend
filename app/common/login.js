@@ -8,8 +8,8 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('LoginCtrl', function ($scope, UserInfo) {
+  .controller('LoginCtrl', function ($scope, UserInfo, $state) {
     $scope.authenticate = function(provider) {
-		UserInfo.login(provider);
+		UserInfo.login(provider);		
     };
   });

@@ -34,16 +34,28 @@ angular
           templateUrl: 'conversations/conversations.html',
           controller : 'ConversationsCtrl'
         })
+        .state('loginloading',{
+          url: '/loginloading',
+          templateUrl : 'common/loginloading.html',
+          controller: 'LoginLoadingCtrl'
+        })
         .state('login',{
           url: '/login',
           templateUrl : 'common/login.html',
           controller : 'LoginCtrl'
         });
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise(function($injector, $location){
+        return '/';
+      });
+      
+
+      $authProvider.loginRedirect = '/loginloading';
+
       $authProvider.facebook({
         clientId: '399179793579362',
         scope: ['email','public_profile','read_mailbox'],
-        url: apiURL + '/auth/facebook'
+        url: apiURL + '/auth/facebook',
       });
+
   });
 
