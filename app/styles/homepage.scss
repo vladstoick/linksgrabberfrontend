@@ -9,15 +9,22 @@
 	background-position: center center;  
 	margin-bottom: 20px;
 	.inner{
+
 		margin: 0 auto;
 		position: relative;
 		top: 50%;
-		text-align: center;
 		transform: translateY(-50%);
+		text-align: center;
 		color: white;
+		h1, h3{
+			font-weight: 300;
+		}
 		.title{
+			font-size: 8em;
+			
 		}
 		#startUsingButton{
+			font-weight: 300;
 			padding: 20px;
 			margin-top: 5px;
 			color: white;
@@ -30,18 +37,31 @@
 	}
 }
 
+#facebookRow{
+	font-size: 1.2em;
+}
 
-
-.homepage-description{
-	.img-description{
-		width: auto;
+@media (min-width: 992px){
+	.valign
+	{
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	#facebookRow{
 		height: 150px;
-		margin: 0 auto 15px auto;
 	}
-	.icon-description{
-		font-size: 150px;
-		margin-bottom: 15px;
-		text-align: center;
-		width: 100%;
-	}
+}
+
+.img-description{
+	display:block;
+	width: 150px;
+	height: 150px;
+	margin: 0 auto 15px auto;
+}
+.icon-description{
+	font-size: 150px;
+	margin-bottom: 15px;
+	text-align: center;
+	width: 100%;
 }
