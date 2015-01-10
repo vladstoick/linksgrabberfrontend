@@ -4,9 +4,11 @@
 	 	infinite-scroll-disabled='conversations.isBusy || conversations.isDone' 
 	 	infinite-scroll-distance='1'>		
 
-		<div ng-repeat="conversation in conversations.conversations | filter: searchText">
-			<conversationsrow data="conversation"></conversationsrow>
-			<div class="divider"></div>
+		<div ng-repeat="conversation in conversations.conversations">
+			<conversationrow 
+				data="conversation" 
+				ng-click="openConversation(conversation.id)">
+			</conversationrow>
 		</div>
 		<div ng-show='conversations.isBusy' id="linksLoader">Loading data...</div>
 		<div ng-show="conversations.isDone" id="loadFinished">These are all the links you have recieved</div>

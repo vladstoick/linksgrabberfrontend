@@ -8,9 +8,12 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('ConversationsCtrl', function ($scope, Conversations, UserInfo, $location) {
-  	if(UserInfo.isAuthenticated() === false){
-  		$location.path('/login');
+  .controller('ConversationsCtrl', function ($scope, Conversations, UserInfo, $state) {
+  	if(UserInfo.isAuthenticated === false){
+  		$state.go('login');
   	}
 	$scope.conversations = Conversations;
+	$scope.openConversation = function(id){
+		$state.go('conversationsdetail',{conversationid:id});
+	}
   });

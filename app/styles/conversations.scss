@@ -1,8 +1,13 @@
-conversationsrow {
+@import 'compass/css3/box-shadow';
+.conversationsRow {
+	@include box-shadow(grey 2px 2px 10px);
+	height: 100%;
+	padding: 8px;
+	margin: 10px 0px 10px 0px;
 	img {
 		width: 50px;
 		height: 50px;
 		border-radius: 25px;	
-		margin: 0 5px;
+		margin: 5px;
 	}
 }

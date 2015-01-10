@@ -8,10 +8,9 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('LinksCtrl', function ($scope, Links, UserInfo, $location) {
+  .controller('ConversationDetailCtrl', function ($scope, Conversations, UserInfo, $location) {
   	if(UserInfo.isAuthenticated === false){
   		$location.path('/login');
   	}
-	$scope.links = Links;
-    $scope.shouldshowallmedia = false;
+	$scope.conversations = Conversations;
   });
