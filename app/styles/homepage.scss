@@ -9,7 +9,6 @@
 	background-position: center center;  
 	margin-bottom: 20px;
 	.inner{
-
 		margin: 0 auto;
 		position: relative;
 		top: 50%;
@@ -55,13 +54,11 @@
 
 .img-description{
 	display:block;
-	width: 150px;
+	width: auto;
 	height: 150px;
 	margin: 0 auto 15px auto;
 }
-.icon-description{
-	font-size: 150px;
-	margin-bottom: 15px;
-	text-align: center;
-	width: 100%;
+
+#mainPageContainer{
+	margin-bottom: 80px;
 }

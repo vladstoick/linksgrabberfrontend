@@ -1,16 +1,25 @@
 <div class="link">
-	<div class="row">
-		<div class="col-md-1">
-	 		<img ng-src="{{::data.sender.facebookImgUrl}}" class="avatar">
-	 	</div>
-	 	<div class="col-md-11">
- 			<div class="linkTitle">
-			 	<p class="sender_name">{{::data.sender.name}} sent you</p>
-			 	<a ng-href="{{::data.text}}">{{data.text}}</a>
-		 	</div>
-		 	<p class="date">Sent on {{::data.sent_at | date:'medium'}}</p>
-		 	<inlinemediaview iivsrc="data.text" iivshouldshowmedia="shouldshowallmedia"></inlineimageview>
-	 	</div>
+	<div class="row" id="title">
+		<div class="col-lg-1 col-md-2 col-xs-2">
+			<img ng-src="{{::data.sender.facebookImgUrl}}" class="avatar">		
+		</div>
+		<div class="col-lg-8 col-md-10 col-xs-10 valign">
+			<p class="sender_name" >{{::data.sender.name}} sent you</p>
+			<p class="date hidden-lg"><i class="fa fa-clock-o"></i> Sent {{::data.sent_at*1000 | fromNow}}</p>
+		</div>
+		<div class="col-lg-3 visible-lg valign">
+			<span class="date text-right"><i class="fa fa-clock-o"></i> Sent {{::data.sent_at*1000 | fromNow}}</span>
+		</div>
+	</div>
+<!-- 	<div id="title">
+		
+		<div>
+			
+			
+		</div>
+	</div> -->
+	<a ng-href="{{::data.text}}">{{data.text}}</a>
+	<div>
+	 	<inlinemediaview iivsrc="data.text" iivshouldshowmedia="shouldshowallmedia"></inlineimageview>8
  	</div>
-	<div class="divider"></div>
 </div>

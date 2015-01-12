@@ -1,26 +1,52 @@
+@import 'compass/css3/box-shadow';
 #viewAllMedia{
 	width: 100%;
 	margin: 5px 0px 5px 0px;
 }
+.sender_name{
+	font-size: 22px;
+	margin-bottom: 5px;
+}
+
+.valign {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.avatar{
+	display: block;
+	margin: 0 auto;
+	width: 60px;
+	height: auto;
+	max-width: 100%;
+	border-radius: 30px;
+}		
+.date{
+	color: lightgrey;	
+}
+
 .link{
-	p.sender_name{
-		margin: 0px;
-		font-size: 22px;	
+
+	#title{
+		@media( min-width: 1200px){
+			height: 41px;
+		}
+		@media (max-width: 1199px){
+			height: 60px;
+		}
 	}
-	p.date{
-		color: lightgrey;
-	}
+	@include box-shadow(grey 2px 2px 8px);
+	padding: 15px;
+	margin: 20px 0px;
+
+
 	a{
 		max-width: 960px;
 		font-size: 22px;
 		word-wrap: break-word;
 	}
-	img.avatar{
 
-		width: 100px;
-		max-width: 100%;
-		border-radius: 50px;
-	}
 }
 #linksLoader{
 	text-align: center;
