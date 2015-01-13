@@ -1,12 +1,27 @@
-<div class="conversationsRow">
+<div class="conversationsRow card">
 	<div class="user">
-		<img ng-src="{{img1}}" class="conversationAvatar"/>{{user1}}
+		<div>
+			<img ng-src="{{img1}}" class="conversationAvatar"/>
+		</div>
+		<div class="username">
+			<p>{{user1}}</p>
+		</div>
 	</div>
-	<div class="user">
-		<img ng-src="{{img2}}" class="conversationAvatar" ng-show="img2.length > 0"/>{{user2}}
+	<div class="user" ng-show="img2 !== ''">
+		<div>
+			<img ng-src="{{img2}}" class="conversationAvatar" ng-show="img2.length > 0"/>
+		</div>
+		<div class="username">
+			<p>{{user2}}</p>
+		</div>
 	</div>
-	<div class="user">
-		<img ng-src="{{img3}}" class="conversationAvatar" ng-show="img3.length > 0"/>{{user3}}
+	<div class="user" ng-show="img3 !== ''">
+		<div>
+			<img ng-src="{{img3}}" class="conversationAvatar" ng-show="img3.length > 0"/>
+		</div>
+		<div class="username">
+			<p>{{user3}}</p>
+		</div>
 	</div>
 	{{andMore}}
 </div>

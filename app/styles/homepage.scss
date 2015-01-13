@@ -1,3 +1,4 @@
+@import 'common';
 .homeSplash{
 	background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/splash.jpg');
 	background-size:   cover;  
@@ -41,14 +42,11 @@
 }
 
 @media (min-width: 992px){
-	.valign
-	{
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-	}
 	#facebookRow{
 		height: 150px;
+		.text{
+			@include valign;
+		}
 	}
 }
 

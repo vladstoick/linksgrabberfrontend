@@ -15,6 +15,9 @@ angular.module('linksgrabberApp')
       templateUrl: 'conversations/conversationrow.html',
       restrict: 'E',
       link : function postLink(scope, element){
+        scope.img1 = '';
+        scope.img2 = '';
+        scope.img3 = '';
         if(scope.data.users.length >= 1){
           scope.img1 = 'https://graph.facebook.com/v2.2/' +
           scope.data.users[0].facebook_id + '/picture?width=100&height=100'; 

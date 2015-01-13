@@ -1,17 +1,12 @@
-@import 'compass/css3/box-shadow';
+@import 'common';
 #viewAllMedia{
 	width: 100%;
 	margin: 5px 0px 5px 0px;
 }
 .sender_name{
 	font-size: 22px;
-	margin-bottom: 5px;
-}
-
-.valign {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	margin: 0px;	
+	// margin-bottom: 5px;
 }
 
 .avatar{
@@ -27,18 +22,18 @@
 }
 
 .link{
-
-	#title{
+	
+	.title{
 		@media( min-width: 1200px){
 			height: 41px;
 		}
 		@media (max-width: 1199px){
 			height: 60px;
 		}
+		div{
+			@include valign;
+		}
 	}
-	@include box-shadow(grey 2px 2px 8px);
-	padding: 15px;
-	margin: 20px 0px;
 
 
 	a{
