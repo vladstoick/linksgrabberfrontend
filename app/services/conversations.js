@@ -20,6 +20,16 @@ angular.module('linksgrabberApp')
             page : page
           }
         });
+      },
+      getConversationPageForThread : function(page,thread){
+        return $http({
+          method : 'GET',
+          url : apiURL + '/users/me/threads/' + thread,
+          params : {
+            auth_token : UserInfo.apiToken,
+            page : page
+          }
+        });
       }
     };
 

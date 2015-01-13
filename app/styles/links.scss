@@ -25,9 +25,11 @@
 		}		
 		.titleText{
 			vertical-align: bottom;
+			margin-left: 5px;
 		}
+
 		.sender_name{
-			font-size: 22px;
+			font-size: 18px;
 			margin: 0px;	
 			@media(min-width: 768px){
 				display: inline-block;

@@ -44,4 +44,5 @@ angular.module('linksgrabberApp')
 	$scope.openConversation = function(id){
 		$state.go('conversationsdetail',{conversationid:id});
 	}
+	
   });
