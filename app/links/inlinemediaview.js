@@ -35,26 +35,34 @@ angular.module('linksgrabberApp')
       	templateUrl : 'links/inlinemediaview.html',
       	scope: {
       		iivsrc : '=',
-          iivshouldshowmedia : '='
+          iivshouldshowmedia : '=',
       	},
       	restrict: 'E',
         controller : function ($scope) {
           $scope.$watch('iivshouldshowmedia', function(newValue){
             $scope.shouldShowMedia = newValue;
           });
+          $scope.$watch('shouldShowMedia', function(newValue){
+            if(newValue == true){
+              $scope.url = $scope._url;
+            }
+          });
         },
       	link: function postLink(scope) {
       		scope.shouldShowMedia = scope.iivshouldshowmedia;
       		scope.url = '';
+          scope.isMedia = 'false';
           var imgUrl = getImage(scope.iivsrc);
           var youtubeUrl = getYoutube(scope.iivsrc);
         	if( imgUrl !== ''){
+            scope.isMedia = true;
             scope.urlView = 'links/inlineimageview.html';
-           	scope.url = imgUrl;
+           	scope._url = imgUrl;
             scope.type = "image";
         	} else if(youtubeUrl !== ''){
+            scope.isMedia = true;
             scope.urlView = 'links/inlineyoutubeview.html';
-            scope.url = youtubeUrl;
+            scope._url = youtubeUrl;
             scope.type = "video";
           }
       	}
