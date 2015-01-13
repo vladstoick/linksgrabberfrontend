@@ -9,16 +9,18 @@
  */
 angular.module('linksgrabberApp')
   .factory('Links', function ($http, UserInfo, apiURL) { 
-    var items = [];
-    var isBusy = false;
-    var isDone = false;
-    var page = 1;
-    var totalPages = -1;
+    var Links = {
+      items : [],
+      isBusy : false,
+      isDone : false,
+      page : 1,
+      totalPages : -1
+    };
 
-    function nextPage(){
-      isBusy = true;
-      if(page > totalPages && totalPages!==-1){
-        isDone = true;
+    Links.nextPage = function(){
+      Links.isBusy = true;
+      if(Links.page > Links.totalPages && Links.totalPages!==-1){
+        Links.isDone = true;
         return;
       }
       $http({
@@ -26,29 +28,21 @@ angular.module('linksgrabberApp')
         url : apiURL + '/users/me/links',
         params : {
           auth_token : UserInfo.apiToken,
-          page : page
+          page : Links.page
         }
       }).success(function(data) {
-        totalPages = data.paging.total_pages;
+        Links.total_pages = data.paging.total_pages;
         data = data.links.map(function(link){
           link.sender.facebookImgUrl = 'https://graph.facebook.com/v2.2/' +
           link.sender.facebook_id + '/picture?width=100&height=100';    
           return link;
         });
         for(var i = 0; i < data.length ; i++){
-          items.push(data[i]);
+          Links.items.push(data[i]);
         }
-        isBusy = false;
+        Links.isBusy = false;
       });
-      page++;
+      Links.page++;
     }
-
-    
-
-    return {
-      nextPage : nextPage,
-      isDone : isDone,
-      isBusy : isBusy,
-      items: items
-    };
+    return Links;
   });
