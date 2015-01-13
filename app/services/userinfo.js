@@ -9,7 +9,7 @@
  */
 
 angular.module('linksgrabberApp')
-  .factory('UserInfo', function ($auth, $http) {
+  .factory('UserInfo', function ($auth, $http, $rootScope) {
 
     var user = {
       fullName : '',
@@ -24,6 +24,7 @@ angular.module('linksgrabberApp')
       user.fullName = '';
       user.authToken = '';
       user.isAuthenticated = false;
+      $rootScope.$broadcast('logout');
     };
 
     user.isAuthenticated = false;

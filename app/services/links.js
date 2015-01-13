@@ -8,7 +8,7 @@
  * Factory in the linksgrabberApp.
  */
 angular.module('linksgrabberApp')
-  .factory('Links', function ($http, UserInfo, apiURL) { 
+  .factory('Links', function ($http, UserInfo, apiURL, $rootScope) { 
     var Links = {
       items : [],
       isBusy : false,
@@ -17,12 +17,20 @@ angular.module('linksgrabberApp')
       totalPages : -1
     };
 
+    $rootScope.$on('logout',function(){
+      Links.items = [];
+      Links.isBusy = false;
+      Links.isDone = false;
+      Links.page = 1;
+      Links.totalPages = -1;
+    })
+
     Links.nextPage = function(){
-      Links.isBusy = true;
       if(Links.page > Links.totalPages && Links.totalPages!==-1){
         Links.isDone = true;
         return;
       }
+      Links.isBusy = true;
       $http({
         method : 'GET',
         url : apiURL + '/users/me/links',
@@ -31,7 +39,7 @@ angular.module('linksgrabberApp')
           page : Links.page
         }
       }).success(function(data) {
-        Links.total_pages = data.paging.total_pages;
+        Links.totalPages = data.paging.total_pages;
         data = data.links.map(function(link){
           link.sender.facebookImgUrl = 'https://graph.facebook.com/v2.2/' +
           link.sender.facebook_id + '/picture?width=100&height=100';    

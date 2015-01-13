@@ -8,44 +8,47 @@
  * Factory in the linksgrabberApp.
  */
 angular.module('linksgrabberApp')
-  .factory('Conversations', function (UserInfo, $http, apiURL) {
-    var conversations = [];
-    var isBusy = false;
-    var isDone = false;
-    var page = 1;
-    var totalPages = -1;
+  .factory('Conversations', function (UserInfo, $http, apiURL, $rootScope) {
+    var Conversations = {
+      conversations : [],
+      isBusy : false,
+      isDone : false,
+      page : 1,
+      totalPages : -1
+    };
 
-    function nextPage(){
-      isBusy = true;
-      if(page > totalPages && totalPages!==-1){
-        isDone = true;
+    $rootScope.$on('logout',function(){
+      Conversations.items = [];
+      Conversations.isBusy = false;
+      Conversations.isDone = false;
+      Conversations.page = 1;
+      Conversations.totalPages = -1;
+    })
+
+    Conversations.nextPage = function(){
+      if(Conversations.page > Conversations.totalPages && Conversations.totalPages!==-1){
+        Conversations.isDone = true;
         return;
       }
+      Conversations.isBusy = true;
       $http({
         method : 'GET',
         url : apiURL + '/users/me/threads',
         params : {
           auth_token : UserInfo.apiToken,
-          page : page
+          page : Conversations.page
         }
       }).success(function(data) {
-        totalPages = data.paging.total_pages;
+        Conversations.totalPages = data.paging.total_pages;
         data = data.threads;
         for(var i = 0; i < data.length ; i++){
-          conversations.push(data[i]);
+          Conversations.conversations.push(data[i]);
         }
-        isBusy = false;
+        Conversations.isBusy = false;
       });
-      page++;
+      Conversations.page++;
     }
 
-    
-
-    return {
-      nextPage : nextPage,
-      isDone : isDone,
-      isBusy : isBusy,
-      conversations : conversations
-    };
+    return Conversations;
 
   });
