@@ -2,7 +2,6 @@
 .homeSplash{
 	background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/splash.jpg');
 	background-size:   cover;  
-	height: 600px;
 	margin-top: -72px;
 	@media (max-width: 768px){
 		margin-top: -20px;
@@ -10,18 +9,22 @@
 	background-position: center center;  
 	margin-bottom: 20px;
 	.inner{
-		margin: 0 auto;
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
+		margin: 0 auto ;
+		padding: 100px 5px 100px 5px;
 		text-align: center;
 		color: white;
 		h1, h3{
 			font-weight: 300;
 		}
+		#logo{
+			width: 600px;
+			margin: 0 auto;
+		}
 		.title{
 			font-size: 8em;
-			
+			@media(max-width: 600px){
+				font-size: 4em;
+			}
 		}
 		#startUsingButton{
 			font-weight: 300;
