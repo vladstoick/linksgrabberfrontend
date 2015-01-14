@@ -40,9 +40,6 @@
 	}
 }
 
-#facebookRow{
-	font-size: 1.2em;
-}
 
 @media (min-width: 992px){
 	#facebookRow{
@@ -74,11 +71,14 @@
 		}
 		article{
 			@extend .container;
+			font-size: 1.2em;
 		}
 		&:last-of-type{
 			padding-bottom: 80px;
 		}
 	}
-
+	footer{
+		padding: 10px 0px 10px 0px;
+	}
 
 }

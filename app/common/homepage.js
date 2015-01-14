@@ -8,6 +8,6 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('HomePageCtrl', function () {
-
+  .controller('HomePageCtrl', function ($scope) {
+  	$scope.date = new Date();
   });
