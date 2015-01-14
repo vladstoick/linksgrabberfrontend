@@ -23,6 +23,7 @@ angular.module('linksgrabberApp')
 		if($scope.isDone == true){
 			return;
 		}
+		$scope.isBusy = true;
 		Conversations.getConversationsPage(page)
 			.success(function(conversations){
 				totalPages = conversations.paging.total_pages;

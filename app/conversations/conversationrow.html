@@ -1,26 +1,10 @@
-<div class="conversationsRow card">
-	<div class="user">
+<div class="conversationsRow card" ng-show="users.length > 0">
+	<div class="user" ng-repeat="user in users"> 
 		<div>
-			<img ng-src="{{img1}}" class="conversationAvatar"/>
+			<img ng-src="{{user.facebook_id | facebookProfilePic}}" class="conversationAvatar"/>
 		</div>
 		<div class="username">
-			<p>{{user1}}</p>
-		</div>
-	</div>
-	<div class="user" ng-show="img2 !== ''">
-		<div>
-			<img ng-src="{{img2}}" class="conversationAvatar" ng-show="img2.length > 0"/>
-		</div>
-		<div class="username">
-			<p>{{user2}}</p>
-		</div>
-	</div>
-	<div class="user" ng-show="img3 !== ''">
-		<div>
-			<img ng-src="{{img3}}" class="conversationAvatar" ng-show="img3.length > 0"/>
-		</div>
-		<div class="username">
-			<p>{{user3}}</p>
+			<p>{{user.name}}</p>
 		</div>
 	</div>
 	{{andMore}}

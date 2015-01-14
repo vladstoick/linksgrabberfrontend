@@ -26,6 +26,7 @@ angular.module('linksgrabberApp')
 		if($scope.isDone == true){
 			return;
 		}
+		$scope.isBusy = true;
 		Conversations.getConversationPageForThread(page,thread)
 			.success(function(links){
 				totalPages = links.paging.total_pages;
