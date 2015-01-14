@@ -1,4 +1,5 @@
 @import 'common';
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 .homeSplash{
 	background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/splash.jpg');
 	background-size:   cover;  
@@ -7,7 +8,6 @@
 		margin-top: -20px;
 	}
 	background-position: center center;  
-	margin-bottom: 20px;
 	.inner{
 		margin: 0 auto ;
 		padding: 100px 5px 100px 5px;
@@ -60,6 +60,25 @@
 	margin: 0 auto 15px auto;
 }
 
-#mainPageContainer{
-	margin-bottom: 80px;
+#homePageContainer{
+
+	section{
+		header{
+			
+			text-align: center;
+			padding: 10px;
+			h1{
+				font-weight: 900;
+			}
+			margin-bottom: 10px;
+		}
+		article{
+			@extend .container;
+		}
+		&:last-of-type{
+			padding-bottom: 80px;
+		}
+	}
+
+
 }

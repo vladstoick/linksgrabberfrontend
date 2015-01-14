@@ -12,9 +12,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li ng-show="user.isAuthenticated"><a ui-sref="links">Links</a></li>
-        <li ng-show="user.isAuthenticated"><a ui-sref="conversations">Conversations</a></li>
+        <!-- <li ng-show="user.isAuthenticated"><a ui-sref="conversations">Conversations</a></li> -->
         <li ng-hide="user.isAuthenticated"><a ui-sref="login" class="login">Login</a></li>
-        <li class="dropdown desktopDropdown">
+        <li class="dropdown hidden-xs">
           <a class="dropdown-toggle" id="dropdownWithImg" data-toggle="dropdown" 
             role="button" aria-expanded="false" ng-show="user.isAuthenticated">
             <img id="profilePicture" ng-src="{{user.profilePic}}"/>
@@ -26,8 +26,8 @@
             <li><a ng-click="user.logout()">Logout</a></li>
           </ul>
         </li>      
-        <li class="mobileDropdown" ng-show="user.isAuthenticated"><a href="#">Settings</a></li>
-        <li class="mobileDropdown" ng-show="user.isAuthenticated"><a ng-click="user.logout()">Logout</a></li>
+        <li class="visible-xs" ng-show="user.isAuthenticated"><a href="#">Settings</a></li>
+        <li class="visible-xs" ng-show="user.isAuthenticated"><a ng-click="user.logout()">Logout</a></li>
       </ul>
     </div>
   </div>
