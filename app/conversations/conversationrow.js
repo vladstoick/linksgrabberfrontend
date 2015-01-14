@@ -21,7 +21,6 @@ angular.module('linksgrabberApp')
         for( var i = 0 ; i < Math.min(3,scope.data.users.length) ; i++ ){
           scope.users.push(scope.data.users[i]);
         }
-        console.log(scope.users);
         // if(scope.data.users.length >= 1){
         //   scope.users.push(scope.data.users[0]);
         // }

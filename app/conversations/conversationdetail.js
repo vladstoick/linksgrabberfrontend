@@ -29,6 +29,7 @@ angular.module('linksgrabberApp')
 		$scope.isBusy = true;
 		Conversations.getConversationPageForThread(page,thread)
 			.success(function(links){
+				console.log(links);
 				totalPages = links.paging.total_pages;
         		links = links.messages;
         		links.map(function(link){
@@ -41,7 +42,7 @@ angular.module('linksgrabberApp')
         		}
         		$scope.isBusy = false;
         		page++;
-        		if(totalPages == page){
+        		if(totalPages <= page){
         			$scope.isDone = true;
         		}
 			})

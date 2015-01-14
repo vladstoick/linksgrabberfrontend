@@ -53,6 +53,10 @@ angular
           url: '/logout',
           controller: 'LogoutCtrl'
         })
+        .state('privacyPolicy',{
+          url :'/privacypolicy',
+          templateUrl : 'common/privacypolicy.html'
+        })
       $urlRouterProvider.otherwise(function($injector, $location){
         return '/';
       });
