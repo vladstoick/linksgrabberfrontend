@@ -23,7 +23,7 @@ angular.module('linksgrabberApp')
 	var totalPages = -1;
 	
 	$scope.loadNextPage = function(){
-		if($scope.isDone == true){
+		if($scope.isDone === true){
 			return;
 		}
 		$scope.isBusy = true;
@@ -49,6 +49,6 @@ angular.module('linksgrabberApp')
 			.error(function(error){
 				console.log(error);
 			});	
-	}
+	};
 
   });

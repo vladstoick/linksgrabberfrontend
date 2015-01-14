@@ -21,8 +21,8 @@ angular
       $stateProvider
         .state('home',{
           url: '/',
-          templateUrl : 'common/main.html',
-          controller : 'MainCtrl'
+          templateUrl : 'common/homepage.html',
+          controller : 'HomePageCtrl'
         })
         .state('links',{
           url: '/links',
@@ -56,8 +56,8 @@ angular
         .state('privacyPolicy',{
           url :'/privacypolicy',
           templateUrl : 'common/privacypolicy.html'
-        })
-      $urlRouterProvider.otherwise(function($injector, $location){
+        });
+      $urlRouterProvider.otherwise(function(){
         return '/';
       });
       
@@ -70,7 +70,7 @@ angular
         url: apiURL + '/auth/facebook',
       });
   })
-  .factory('authHttpResponseInterceptor', ['$q','$location', '$injector', function($q, $location, $injector, $auth) {
+  .factory('authHttpResponseInterceptor', ['$q','$location', '$injector', function($q, $location, $injector) {
     return {
         response: function(response){
           return response || $q.when(response);

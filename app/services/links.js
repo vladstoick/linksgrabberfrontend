@@ -23,7 +23,7 @@ angular.module('linksgrabberApp')
       Links.isDone = false;
       Links.page = 1;
       Links.totalPages = -1;
-    })
+    });
 
     Links.nextPage = function(){
       if(Links.page > Links.totalPages && Links.totalPages!==-1){
@@ -51,6 +51,6 @@ angular.module('linksgrabberApp')
         Links.isBusy = false;
       });
       Links.page++;
-    }
+    };
     return Links;
   });

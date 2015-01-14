@@ -43,7 +43,7 @@ angular.module('linksgrabberApp')
             $scope.shouldShowMedia = newValue;
           });
           $scope.$watch('shouldShowMedia', function(newValue){
-            if(newValue == true){
+            if(newValue === true){
               $scope.url = $scope._url;
             }
           });
@@ -58,12 +58,12 @@ angular.module('linksgrabberApp')
             scope.isMedia = true;
             scope.urlView = 'links/inlineimageview.html';
            	scope._url = imgUrl;
-            scope.type = "image";
+            scope.type = 'image';
         	} else if(youtubeUrl !== ''){
             scope.isMedia = true;
             scope.urlView = 'links/inlineyoutubeview.html';
             scope._url = youtubeUrl;
-            scope.type = "video";
+            scope.type = 'video';
           }
       	}
       	

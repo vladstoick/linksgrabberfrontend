@@ -11,7 +11,7 @@
 angular.module('linksgrabberApp')
   .filter('facebookProfilePic', function () {
 	return function(id) {
-		return 'https://graph.facebook.com/v2.2/' + id 
-		+ '/picture?width=100&height=100';    
-	}
+		return 'https://graph.facebook.com/v2.2/' + id +
+		'/picture?width=100&height=100';    
+	};
   });

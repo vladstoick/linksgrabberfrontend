@@ -8,7 +8,7 @@
  * Factory in the linksgrabberApp.
  */
 angular.module('linksgrabberApp')
-  .factory('Conversations', function (UserInfo, $http, apiURL, $rootScope) {
+  .factory('Conversations', function (UserInfo, $http, apiURL) {
     
     return {
       getConversationsPage : function(page){

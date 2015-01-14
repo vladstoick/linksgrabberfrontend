@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name linksgrabberApp.controller:LoginCtrl
+ * @name linksgrabberApp.controller:MainCtrl
  * @description
- * # LoginCtrl
+ * # MainCtrl
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('LogoutCtrl', function (UserInfo) {
-    UserInfo.logout();
+  .controller('HomePageCtrl', function () {
+
   });

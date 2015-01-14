@@ -16,7 +16,7 @@ angular.module('linksgrabberApp')
       profilePic : '',
       facebookToken : '',
       apiToken: '',
-    };6
+    };
 
     user.logout = function(){
       $auth.logout();

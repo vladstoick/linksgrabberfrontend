@@ -14,26 +14,13 @@ angular.module('linksgrabberApp')
     	},
       templateUrl: 'conversations/conversationrow.html',
       restrict: 'E',
-      link : function postLink(scope, element){
+      link : function postLink(scope){
         scope.users = [];
         scope.img2 = '';
         scope.img3 = '';
         for( var i = 0 ; i < Math.min(3,scope.data.users.length) ; i++ ){
           scope.users.push(scope.data.users[i]);
         }
-        // if(scope.data.users.length >= 1){
-        //   scope.users.push(scope.data.users[0]);
-        // }
-        // if(scope.data.users.length >= 2){
-        //   scope.img2 = 'https://graph.facebook.com/v2.2/' +
-        //   scope.data.users[1].facebook_id + '/picture?width=100&height=100';    
-        //   scope.user2 = scope.data.users[1].name;
-        // }
-        // if(scope.data.users.length >= 3){
-        //   scope.img3 = 'https://graph.facebook.com/v2.2/' +
-        //   scope.data.users[2].facebook_id + '/picture?width=100&height=100';     
-        //   scope.user3 = scope.data.users[2].name;
-        // }
         if(scope.data.users.length >= 4){
           scope.andMore = ' and ' + (scope.data.users.length - 3) + ' more';
         }

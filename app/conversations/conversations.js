@@ -20,7 +20,7 @@ angular.module('linksgrabberApp')
 	var totalPages = -1;
 	
 	$scope.loadNextPage = function(){
-		if($scope.isDone == true){
+		if($scope.isDone === true){
 			return;
 		}
 		$scope.isBusy = true;
@@ -33,17 +33,17 @@ angular.module('linksgrabberApp')
         		}
         		$scope.isBusy = false;
         		page++;
-        		if(totalPages == page){
+        		if(totalPages <= page){
         			$scope.isDone = true;
         		}
 			})
 			.error(function(error){
 				console.log(error);
 			});	
-	}
+	};
 
 	$scope.openConversation = function(id){
 		$state.go('conversationsdetail',{conversationid:id});
-	}
+	};
 	
   });
