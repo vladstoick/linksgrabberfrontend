@@ -29,16 +29,6 @@ angular
           templateUrl : 'links/links.html',
           controller : 'LinksCtrl'
         })
-        .state('conversations',{
-          url: '/conversations',
-          templateUrl: 'conversations/conversations.html',
-          controller : 'ConversationsCtrl'
-        })
-        .state('conversationsdetail',{
-          url: '/conversations/:conversationid',
-          templateUrl: 'conversations/conversationdetail.html',
-          controller : 'ConversationDetailCtrl'
-        })
         .state('loginloading',{
           url: '/loginloading',
           templateUrl : 'common/loginloading.html',
