@@ -43,6 +43,10 @@ angular
           url: '/logout',
           controller: 'LogoutCtrl'
         })
+        .state('contact',{
+          url :'/contact',
+          templateUrl : 'common/contact.html'
+        })
         .state('privacyPolicy',{
           url :'/privacypolicy',
           templateUrl : 'common/privacypolicy.html'
