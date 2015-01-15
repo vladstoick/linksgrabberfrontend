@@ -31,12 +31,12 @@ angular
         })
         .state('loginloading',{
           url: '/loginloading',
-          templateUrl : 'common/loginloading.html',
+          templateUrl : 'login/loginloading.html',
           controller: 'LoginLoadingCtrl'
         })
         .state('login',{
           url: '/login',
-          templateUrl : 'common/login.html',
+          templateUrl : 'login/login.html',
           controller : 'LoginCtrl'
         })
         .state('logout',{

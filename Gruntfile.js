@@ -343,6 +343,7 @@ module.exports = function (grunt) {
             'conversations/*.html',
             'links/*.html',
             'views/{,*/}*.html',
+            'login/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'fonts/{,*/}*.*'
           ]
