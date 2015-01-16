@@ -10,8 +10,8 @@
 }
 .transparentNavBar{
 	@media (min-width: 769px){
-		background-color:rgba(0,0,0,0.1);
-		border: 0px;
+		background-color:rgba(0,0,0,0.1) !important;
+		border: 0px !important;
 		p{
 			color: white;
 		}

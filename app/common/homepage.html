@@ -15,10 +15,10 @@
 		</header>
 		<article>
 			<div class="row" id="facebookRow">
-				<div class="col-md-4 col-md-push-8">
+				<div class="col-md-4 col-md-push-7">
 					<img src="images/fb-logo.png" class="img-description" />
 				</div>
-				<div class="col-md-8 valign col-md-pull-4" class="text">
+				<div class="col-md-6 valign col-md-pull-3" class="text">
 					<p> 
 						All you have to do is sign in with Facebook and we’ll do the hard work of looking through your messages and saving just the right URLs. Then you can look through them, filter them by date/website or person that sent it. 
 					</p>
@@ -46,23 +46,32 @@
 				</div>
 			</div>
 			<div class="row">
-				<p class="text-center">We are going to allow you to create a playlist based on videos/songs recieved from different people during a period that you can set.</p>
+				<div class="col-md-10 col-md-push-1">
+					<p class="text-center">We are going to allow you to create a playlist based on videos/songs recieved from different people during a period that you can set.</p>
+				</div>
 			</div>
 		</article>
 	</section>
-	<section>
+<!-- 	<section>
 		<header>
 			<div class="container">
 				<h1>Join our mailing list</h1>			
 			</div>
 		</header>
 		<article>
-			<div class="input-group input-group-lg">
-				<span class="input-group-addon" id="sizing-addon1">email</span>
-				<input type="text" class="form-control" placeholder="Enter your email here" aria-describedby="sizing-addon1">
+			<div class="container">
+				<div class="row">
+					<form class="col-md-10 col-md-push-1" id="subscribeForm">
+						<div class="input-group input-group-lg form-group">
+							<span class="input-group-addon" id="sizing-addon1" ng-model="email">email</span>
+							<input type="text" class="form-control" placeholder="Enter your email here" aria-describedby="sizing-addon1">
+						</div>
+						<button class="btn btn-primary">Subscribe</button>
+					</form>
+				</div>
 			</div>
 		</article>
-	</section>
+	</section> -->
 	<footer>
 		<div class="container">
 		<p>&#169; {{date | date :'yyyy'}} grabbr.io . You can find our privacy policy <a ui-sref="privacyPolicy">here</a></p> 

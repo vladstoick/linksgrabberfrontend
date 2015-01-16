@@ -8,10 +8,10 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('NavigationCtrl', function ($scope, $location, UserInfo) {
+  .controller('NavigationCtrl', function ($scope, $location, UserInfo, $state) {
     $scope.user = UserInfo;
         
     $scope.isOnMainPage = function(){
-      return $location.path() === '/' || $location.path === '';
+		return $state.current.name === 'home';
     };
   });
