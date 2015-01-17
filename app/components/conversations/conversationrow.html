@@ -1,0 +1,11 @@
+<div class="conversationsRow card" ng-show="users.length > 0">
+	<div class="user" ng-repeat="user in users"> 
+		<div>
+			<img ng-src="{{user.facebook_id | facebookProfilePic}}" class="conversationAvatar"/>
+		</div>
+		<div class="username">
+			<p>{{user.name}}</p>
+		</div>
+	</div>
+	{{andMore}}
+</div>

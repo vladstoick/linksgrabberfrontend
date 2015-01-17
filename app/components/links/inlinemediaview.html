@@ -1,0 +1,4 @@
+<buttton class="btn btn-primary" ng-click="shouldShowMedia=!shouldShowMedia" ng-show="isMedia === true">
+	<span ng-hide="shouldShowMedia">Show</span>
+	<span ng-show="shouldShowMedia">Hide</span> {{type}}</buttton>
+<div ng-include="urlView" ng-show="shouldShowMedia"></div>

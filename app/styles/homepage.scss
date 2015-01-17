@@ -1,11 +1,6 @@
-@import 'common';
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 .homeSplash{
-	background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/splash.jpg');
+	background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7) ), url('../images/splash.jpg');
 	background-size:   cover;  
-	@media (max-width: 768px){
-		margin-top: -20px;
-	}
 	background-position: center center;  
 	.inner{
 		margin: 0 auto ;
@@ -19,12 +14,6 @@
 			width: 600px;
 			margin: 0 auto;
 		}
-		.title{
-			font-size: 8em;
-			@media(max-width: 600px){
-				font-size: 4em;
-			}
-		}
 		#startUsingButton{
 			font-weight: 300;
 			padding: 20px;
@@ -33,34 +22,16 @@
 			font-size: 22px;
 			background-color: transparent;
 			&:hover{
-				background-color:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+				background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
 			}
 		}
 	}
 }
 
-
-@media (min-width: 992px){
-	#facebookRow{
-		height: 150px;
-		.text{
-			@include valign;
-		}
-	}
-}
-
-.img-description{
-	display:block;
-	width: auto;
-	height: 150px;
-	margin: 0 auto 15px auto;
-}
-
 #homePageContainer{
-
+	background: url('../images/symphony.png');
 	section{
 		header{
-			
 			text-align: center;
 			padding: 10px;
 			h1{
@@ -69,9 +40,15 @@
 			margin-bottom: 10px;
 		}
 		article{
-			@extend .container;
 			font-size: 1.2em;
+			.img-description{
+				display:block;
+				width: auto;
+				height: 150px;
+				margin: 0 auto 15px auto;
+			}
 		}
+
 		&:last-of-type{
 			padding-bottom: 80px;
 		}
@@ -80,9 +57,5 @@
 		border-top: 1px solid lightgrey;
 		padding: 20px 0px 10px 0px;
 	}
-	#subscribeForm {
-		button{
-			width: 100%;
-		}
-	}
+
 }

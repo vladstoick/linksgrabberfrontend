@@ -20,22 +20,22 @@ module.exports = function(config) {
     files: [
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-cookies/angular-cookies.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-touch/angular-touch.js',
-      'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'bower_components/satellizer/satellizer.js',
+      'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/angular-youtube-mb/src/angular-youtube-embed.js',
+      'bower_components/moment/moment.js',
+      'app/components/**/*.js',
+      'app/components/**/*.html',
+      'app/components/app.js',
+      // 'test/spec/controllers/navigation.js'
     ],
 
     // list of files / patterns to exclude
     exclude: [],
 
     // web server port
-    port: 8080,
+    port: 9000,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -46,11 +46,12 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      'PhantomJS'
+      'Chrome'
     ],
 
     // Which plugins to enable
     plugins: [
+      'karma-chrome-launcher',
       'karma-phantomjs-launcher',
       'karma-jasmine'
     ],

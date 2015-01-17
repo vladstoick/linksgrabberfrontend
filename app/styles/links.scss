@@ -1,12 +1,11 @@
-@import 'common';
+@import "mixins";
 #viewAllMedia{
 	width: 100%;
 	margin: 5px 0px 5px 0px;
 }
 
-
 .link{
-
+	@include card;
 	.title{
 		@media(min-width: 768px){
 			height: 60px;
@@ -58,10 +57,7 @@
 	}
 
 }
-#linksLoader{
+#linksLoader, #loadFinished{
 	text-align: center;
 	
-}
-#loadFinished{
-	text-align: center;
 }

@@ -1,19 +1,14 @@
-@import 'custom-bootstrap-variables';
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,700);
-@import 'common';
+@import "commonvariables";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,700);
 
-@import 'utils';
-
-@import 'links';
-@import 'navigation';
-@import 'login';
-@import 'homepage';
-@import 'conversations';
-
-
+@import "homepage";
+@import "conversations";
+@import "navigation";
+@import "links";
+@import "conversations";
 body{
 	font-family: 'Roboto', sans-serif;
 }

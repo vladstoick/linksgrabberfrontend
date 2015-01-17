@@ -1,0 +1,38 @@
+#slackPageContainer{
+	background: url('../images/symphony.png');
+	// color: $lily-white;
+	section{
+
+		header{
+			text-align: center;
+			// background-color: darken($twilight-blue, 1%);
+			padding: 10px;
+			h1{
+				font-weight: 900;
+			}
+			margin-bottom: 10px;
+		}
+		article{
+			font-size: 1.2em;
+			.img-description{
+				display:block;
+				width: auto;
+				height: 150px;
+				margin: 0 auto 15px auto;
+			}
+		}
+
+		&:last-of-type{
+			padding-bottom: 80px;
+		}
+	}
+	footer{
+		border-top: 1px solid lightgrey;
+		padding: 20px 0px 10px 0px;
+	}
+	#subscribeForm {
+		button{
+			width: 100%;
+		}
+	}
+}

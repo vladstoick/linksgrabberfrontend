@@ -1,0 +1,16 @@
+<div class="container">
+	<div
+		infinite-scroll='loadNextPage()'
+	 	infinite-scroll-disabled='isBusy || isDone' 
+	 	infinite-scroll-distance='1'>		
+
+		<div ng-repeat="conversation in conversations">
+			<conversationrow 
+				data="conversation" 
+				ng-click="openConversation(conversation.id)">
+			</conversationrow>
+		</div>
+		<div ng-show='isBusy' id="linksLoader">Loading data...</div>
+		<div ng-show="isDone" id="loadFinished">These are all the conversations you have</div>
+	</div>
+</div>
