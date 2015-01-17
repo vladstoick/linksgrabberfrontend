@@ -45,7 +45,8 @@ angular
         })
         .state('contact',{
           url :'/contact',
-          templateUrl : 'common/contact.html'
+          templateUrl : 'common/contact.html',
+          controller: 'ContactCtrl'
         })
         .state('privacyPolicy',{
           url :'/privacypolicy',
