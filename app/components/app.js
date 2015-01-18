@@ -14,7 +14,8 @@ angular
     'infinite-scroll',
     'ui.router',
     'satellizer',
-    'youtube-embed'
+    'youtube-embed',
+    'ui.bootstrap'
   ])
   .constant('apiURL', 'https://linksgrabber.herokuapp.com')
   .config(function ($stateProvider, $authProvider, apiURL, $urlRouterProvider) {
