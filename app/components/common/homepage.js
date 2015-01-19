@@ -12,7 +12,7 @@ angular.module('linksgrabberApp')
   	$scope.date = new Date();
   	if(UserInfo.isAuthenticated === true && UserInfo.firstLoad){
   		UserInfo.firstLoad = false;
-  		$state.go('links');
+  		// $state.go('links');
 
   	}
   });
