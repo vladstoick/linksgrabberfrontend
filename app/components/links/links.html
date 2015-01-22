@@ -11,13 +11,13 @@
 			
 		</div>
 		<div class="col-md-9">
-			<div infinite-scroll='links.nextPage()' infinite-scroll-disabled='links.isBusy || links.isDone' infinite-scroll-distance='1'>
+			<div infinite-scroll='loadNextPage()' infinite-scroll-disabled='isBusy || isDone' infinite-scroll-distance='1'>
 				
-				<div ng-repeat="link in links.items | filter: searchText">
+				<div ng-repeat="link in links | filter: searchText">
 					<linkrow data="link" shouldshowallmedia="shouldshowallmedia"></linkrow>
 				</div>
-				<div ng-show='links.isBusy' id="linksLoader">Loading data...</div>
-				<div ng-show="links.isDone" id="loadFinished">These are all the links you have recieved</div>
+				<div ng-show='isBusy' id="linksLoader">Loading data...</div>
+				<div ng-show="isDone" id="loadFinished">These are all the links you have recieved</div>
 			</div>
 		</div>
 		
