@@ -31,13 +31,10 @@ angular.module('linksgrabberApp')
     user.isAuthenticated = false;
 
     user.login = function (provider){
-      $auth.authenticate(provider).then(function(){
-        user.isAuthenticated = true;
-        loadData(); 
-      });
+      return $auth.authenticate(provider);
     };
 
-    function loadData(){
+    user.loadData = function(){
       user.authToken = $auth.getPayload().token;
       user.apiToken = $auth.getPayload().userAuth;
       user.profilePic = 'https://graph.facebook.com/v2.2/me/picture?width=100&height=100&access_token='+user.authToken;   
@@ -50,7 +47,7 @@ angular.module('linksgrabberApp')
 
     if($auth.isAuthenticated() === true){
       user.isAuthenticated = true;
-      loadData();
+      user.loadData();
     }
 
     return user;

@@ -21,7 +21,6 @@ angular.module('linksgrabberApp')
       		} else {
       			scope.type = 'sent';
       		}
-      		console.log(scope.type);
       	}
     };
   });
