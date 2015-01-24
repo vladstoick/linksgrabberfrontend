@@ -8,6 +8,6 @@
  * Controller of the linksgrabberApp
  */
 angular.module('linksgrabberApp')
-  .controller('SettingsCtrl', function (UserInfo) {
-
-  });
+  	.controller('SettingsCtrl', function ($scope, UserInfo) {
+  		$scope.user = UserInfo;
+  	});

@@ -1,8 +1,9 @@
+@import 'mixins';
 #profilePicture{
 	width: 50px;
 	height: 50px;
 	padding: 5px;
-	border-radius: 25px;
+	@include roundimage(50px);
 	margin-right: 5px;
 }
 

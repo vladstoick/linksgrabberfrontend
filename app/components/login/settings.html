@@ -1,4 +1,8 @@
-<div class="container">
-	<h1>Your account</h1>
-	<p>Logged in with: {{::logintype}}</p>
+<div class="container settings">
+	<div class="text-center">
+		<img ng-src="{{::user.profilePic}}" id="profilePic" />
+		<h1>{{user.fullName}}</h1>
+		<p>Logged in with {{user.provider | capitalize }}</p>
+	</div>
+
 </div>

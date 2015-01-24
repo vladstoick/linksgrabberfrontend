@@ -9,7 +9,7 @@
  * Filter in the linksgrabberApp.
  */
 angular.module('linksgrabberApp')
-  .filter('fromNow', function () {
+  .filter('capitalize', function () {
 	return function(date) {
 		return moment(date).fromNow();
 	};

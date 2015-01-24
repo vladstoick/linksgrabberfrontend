@@ -1,0 +1,8 @@
+@import "mixins";
+.settings {
+	#profilePic{
+		width: 100px;
+		height: 100px;
+		@include roundimage(100px);
+	}
+}

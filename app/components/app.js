@@ -55,7 +55,8 @@ angular
         })
         .state('settings',{
           url :'/settings',
-          templateUrl : 'components/login/settings.html'
+          templateUrl : 'components/login/settings.html',
+          controller : 'SettingsCtrl'
         })
         .state('privacyPolicy',{
           templateUrl : 'components/common/privacypolicy.html',

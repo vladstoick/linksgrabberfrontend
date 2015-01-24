@@ -15,7 +15,7 @@
 		width: 60px;
 		height: auto;
 		max-width: 100%;
-		border-radius: 30px;
+		@include roundimage(60px);
 		margin-right: 5px;
 
 	}		
