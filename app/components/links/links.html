@@ -7,7 +7,24 @@
 					<span ng-show="shouldshowallmedia">Hide</span> all media
 				</button>
 			</div>
-			<input ng-model="searchText" type="text" class="form-control" placeholder="Type here to filter">
+			<div class="form-group">
+				<p>Show links that you</p>
+				<div class="btn-group">
+ 					<button type="button" 
+ 						class="btn btn-default" 
+ 						ng-class="{ active : (typeOfLinks === 'received') }"
+ 						ng-click="changeTypeOfLinks('received')">received</button>
+					<button type="button" 
+						class="btn btn-default" 
+						ng-class="{ active : (typeOfLinks === 'sent') }"
+						ng-click="changeTypeOfLinks('sent')">sent</button>
+
+				</div>
+			</div>
+			<div class="form-group">
+				<p>Filter links</p>
+				<input ng-model="searchText" type="text" class="form-control" placeholder="Type here to filter">
+			</div>
 			
 		</div>
 		<div class="col-md-9">
