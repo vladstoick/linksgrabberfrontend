@@ -68,10 +68,20 @@ angular
 
       $authProvider.loginRedirect = '/loginloading';
       $authProvider.logoutRedirect = '/login';
+
       $authProvider.facebook({
         clientId: '399179793579362',
         scope: ['email','public_profile','read_mailbox'],
         url: apiURL + '/auth/facebook',
+      });
+
+      $authProvider.oauth2({
+        name : 'slack',
+        scope: 'read',
+        clientId : '2156635878.3387133090',
+        authorizationEndpoint : 'https://slack.com/oauth/authorize',
+        url: apiURL + '/auth/slack',
+        redirectUri: window.location.origin
       });
   })
   .factory('authHttpResponseInterceptor', ['$q','$location', '$injector', function($q, $location, $injector) {

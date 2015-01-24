@@ -1,15 +1,30 @@
 #loginForm{
 	text-align: center;
 }
-#loginButton{
- 	width: auto;
+.loginButton{
+ 	width: 300px;
   	max-width: 100%;
  	margin: 0 auto;
-  	background-color: #3b5998;
+  	
  	color: white;
- 	margin-bottom: 50px;
+ 	text-align: left;
+ 	&:hover{
+ 		color:darken(white,10%);
+ 	}
+ 	&.facebook {
+ 		background-color: #3b5998;	
+ 	}
+ 	&.slack{
+ 		background-color: #e21565;
+ 	}
+ 	span {
+ 		width: 100%;
+ 	}
  	.fa{
- 		padding-right: 5px;
- 		border-right: 1px solid rgba(0, 0, 0, 0.5);
+ 		text-align: left;
+ 		width: 20px;
+ 		
+ 		margin-right: 5px;
+ 		border-right: 1px solid rgba(255, 255, 255, 0.5);
  	}
 }
