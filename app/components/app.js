@@ -53,6 +53,10 @@ angular
           url :'/slack',
           templateUrl : 'components/common/slack.html'
         })
+        .state('settings',{
+          url :'/settings',
+          templateUrl : 'components/login/settings.html'
+        })
         .state('privacyPolicy',{
           templateUrl : 'components/common/privacypolicy.html',
           url :'/privacypolicy'

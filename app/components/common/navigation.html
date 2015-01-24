@@ -26,12 +26,13 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu" role="menu">
-            <!-- <li><a href="#">Settings</a></li> -->
+            <li><a ui-sref="settings">Settings</a></li>
             <li><a ng-click="user.logout()">Logout</a></li>
           </ul>
         </li>      
         <!-- <li class="visible-xs" ng-show="user.isAuthenticated"><a href="#">Settings</a></li> -->
-        <li class="visible-xs" ng-show="user.isAuthenticated"><a ng-click="user.logout()">Logout</a></li>
+        <li class="visible-xs" ng-show="user.isAuthenticated" ng-click="user.logout()">Logout</li>
+        <li class="visible-xs" ng-show="user.isAuthenticated" ui-sref="settings">Settings</li>
       </ul>
     </div>
   </div>
