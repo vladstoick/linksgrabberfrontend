@@ -33,7 +33,13 @@
 				<div ng-repeat="link in links | filter: searchText">
 					<linkrow data="link" shouldshowallmedia="shouldshowallmedia"></linkrow>
 				</div>
-				<div ng-show='isBusy' id="linksLoader">Loading data...</div>
+				<div ng-show='isBusy' id="linksLoader">
+					<p>Loading links...</p>
+					<div class="spinner">
+						<div class="dot1"></div>
+						<div class="dot2"></div>
+					</div>			
+				</div>
 				<div ng-show="isDone" id="loadFinished">These are all the links you have recieved</div>
 			</div>
 		</div>
