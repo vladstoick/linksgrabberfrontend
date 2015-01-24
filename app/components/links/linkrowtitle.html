@@ -1,0 +1,16 @@
+<div class="linktitle">
+	<div ng-show="type === 'received'">
+		<img ng-src="{{::data.sender.facebook_id | facebookProfilePic}}" class="avatar" alt="{{::receiver.name}}">		
+	</div>
+	<div ng-show="type === 'sent'" ng-repeat="receiver in data.receiver">
+		<img ng-src="{{::receiver.facebook_id | facebookProfilePic}}" class="avatar" alt="{{::receiver.name}}">		
+	</div>
+	<div class="titleText">
+		<p class="sender_name" ng-show="type === 'received'">{{::data.sender.name}} sent you </p>
+		<p class="sender_name" ng-show="type === 'sent'"> received a link from you</p>
+		<p class="date visible-xs"><i class="fa fa-clock-o"></i> {{::data.sent_at*1000 | fromNow}}</p>
+	</div>
+	<div class="titleText pull-right hidden-xs">
+		<p class="date"><i class="fa fa-clock-o"></i> {{::data.sent_at*1000 | fromNow}}</p>
+	</div>
+</div>
