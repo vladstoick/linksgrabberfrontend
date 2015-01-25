@@ -1,8 +1,22 @@
-<div class="container settings">
-	<div class="text-center">
-		<img ng-src="{{::user.profilePic}}" id="profilePic" />
+<div class="settings">
+	<div class="text-center profile">
+		<img ng-src="{{::user.profilePic}}" id="profilePic"></img>
 		<h1>{{user.fullName}}</h1>
-		<p>Logged in with {{user.provider | capitalize }}</p>
 	</div>
-
+	<div class="container">
+		<div ng-show="user.providers.length > 0">
+			<h2>Attached services</h2>
+			<ul>
+				<li ng-repeat="provider in user.providers">{{provider | capitalize }}</li>
+			</ul>
+		</div>
+		<div ng-show="user.providers.length < user.numberOfProviders">
+			<div class="form-group" ng-hide="user.providers.contains('facebook')">
+				<p>Connect your Facebook account</p>	
+			</div>
+			<div class="form-group" ng-hide="user.providers.contains('slack')">
+				<p>Connect your Slack account</p>	
+			</div>
+		</div>
+	</div>
 </div>

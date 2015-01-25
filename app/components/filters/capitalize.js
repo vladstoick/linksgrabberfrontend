@@ -10,7 +10,7 @@
  */
 angular.module('linksgrabberApp')
   .filter('capitalize', function () {
-	return function(date) {
-		return moment(date).fromNow();
+	return function(input) {
+		return input.charAt(0).toUpperCase() + input.slice(1);
 	};
   });

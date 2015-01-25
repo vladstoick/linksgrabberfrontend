@@ -14,10 +14,11 @@ angular.module('linksgrabberApp')
     var user = {
       fullName : '',
       profilePic : '',
-      provider : '',
+      providers : [],
       apiToken : '',
       authToken : '',
-      firstLoad : true
+      firstLoad : true,
+      numberOfProviders : 2
     };
 
     var facebookAuthToken = '';
@@ -25,21 +26,31 @@ angular.module('linksgrabberApp')
     user.logout = function(){
       $auth.logout();
       user.isAuthenticated = false;
+      localStorage.clear();
       $rootScope.$broadcast('logout');
     };
 
     user.isAuthenticated = false;
 
-    user.login = function (provider){
-      var promise =  $auth.authenticate(provider);
+    user.login = function (loginProvider){
+      var promise =  $auth.authenticate(loginProvider);
       promise.then(function(){
-        localStorage.provider = provider;
+        localStorage.provider = loginProvider;
+        localStorage[loginProvider] = 'true'
+        user.isAuthenticated = true;
+        user.loadData();
       });
       return promise;
     };
 
     user.loadData = function(){
       user.provider = localStorage.provider;
+      if(localStorage.slack === 'true'){
+        user.providers.push('slack');
+      }
+      if(localStorage.facebook === 'true'){
+        user.providers.push('facebook');
+      }
       user.authToken = $auth.getPayload().token;
       user.apiToken = $auth.getPayload().userAuth;
       if(user.provider === 'facebook'){
