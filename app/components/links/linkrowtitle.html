@@ -3,7 +3,7 @@
 		<img ng-src="{{::data.sender.facebook_id | facebookProfilePic}}" class="avatar" alt="{{::receiver.name}}">		
 	</div>
 	<div ng-show="type === 'sent'" ng-repeat="receiver in data.receiver">
-		<img ng-src="{{::receiver.facebook_id | facebookProfilePic}}" class="avatar" alt="{{::receiver.name}}">		
+		<img ng-src="{{::receiver.facebook_id | facebookProfilePic}}" class="avatar" alt="{{::receiver.name}}" popover="{{::receiver.name}}" popover-trigger="mouseenter">		
 	</div>
 	<div class="titleText">
 		<p class="sender_name" ng-show="type === 'received'">{{::data.sender.name}} sent you </p>
