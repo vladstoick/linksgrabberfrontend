@@ -376,6 +376,9 @@ module.exports = function (grunt) {
       ],
       test: [
         'compass'
+      ],
+      dist: [
+      
       ]
     },
 
