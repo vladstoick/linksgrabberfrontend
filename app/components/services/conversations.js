@@ -16,7 +16,7 @@ angular.module('linksgrabberApp')
           method : 'GET',
           url : apiURL + '/users/me/threads',
           params : {
-            auth_token : UserInfo.apiToken,
+            auth_token : UserInfo.backendApiToken,
             page : page
           }
         });
@@ -26,7 +26,7 @@ angular.module('linksgrabberApp')
           method : 'GET',
           url : apiURL + '/users/me/threads/' + thread,
           params : {
-            auth_token : UserInfo.apiToken,
+            auth_token : UserInfo.backendApiToken,
             page : page
           }
         });

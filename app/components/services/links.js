@@ -15,7 +15,7 @@ angular.module('linksgrabberApp')
           method : 'GET',
           url : apiURL + '/users/me/links/received',
           params : {
-            auth_token : UserInfo.apiToken,
+            auth_token : UserInfo.backendApiToken,
             page : page
           }
         });
@@ -25,7 +25,7 @@ angular.module('linksgrabberApp')
           method : 'GET',
           url : apiURL + '/users/me/links/sent',
           params : {
-            auth_token : UserInfo.apiToken,
+            auth_token : UserInfo.backendApiToken,
             page : page
           }
         });
