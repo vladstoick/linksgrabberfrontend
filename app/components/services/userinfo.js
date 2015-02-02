@@ -9,14 +9,14 @@
  */
 
 angular.module('linksgrabberApp')
-  .factory('UserInfo', function ($auth, $http, $rootScope) {
+  .factory('UserInfo', function ($auth, $http, $rootScope, apiURL) {
 
     var user = {
       fullName : '',
       profilePic : '',
       backendApiToken : '',
       firstLoad : true,
-      slack : {}
+      // slack : {}
     };
 
     var facebookAuthToken = '';
@@ -24,7 +24,7 @@ angular.module('linksgrabberApp')
     user.logout = function(){
       $auth.logout();
       user.isAuthenticated = false;
-      localStorage.clear();
+      // localStorage.clear();
       $rootScope.$broadcast('logout');
     };
 
@@ -42,8 +42,8 @@ angular.module('linksgrabberApp')
     };
 
     user.loadData = function(){
-      user.provider = localStorage.provider;
       user.backendApiToken = $auth.getPayload().userAuth;
+      user.provider = localStorage.provider;
       // if(localStorage.facebook === 'true'){
       //   user.providers.push('facebook');
       // }
@@ -56,20 +56,17 @@ angular.module('linksgrabberApp')
       //   });
       // }
       if(user.provider === 'slack'){
-        user.slack.apiToken = $auth.getPayload().token;
-        user.slack.userId = $auth.getPayload().slackUserId;
         $http({
           method : 'GET',
-          url : 'https://slack.com/api/users.info',
+          url : apiURL + '/users/me/slack/info',
           params : {
-            token : user.slack.apiToken,
-            user: user.slack.userId
+            auth_token : user.backendApiToken
           }
-        })
-        .success(function(data){
+        }).success(function(data){
+          user.fullName = data.user.name;
+          user.profilePic = data.user.profile.image_192;
           console.log(data);
-        })
-        .error(function(data){
+        }).error(function(data){
           console.log(data);
         });
       }
@@ -77,10 +74,9 @@ angular.module('linksgrabberApp')
     }
 
     if($auth.isAuthenticated() === true){
-      user.isAuthenticated = true;
       user.loadData();
+      user.isAuthenticated = true;
     }
-
     return user;
 
   });

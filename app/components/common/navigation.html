@@ -14,7 +14,7 @@
         <li ng-show="user.isAuthenticated"><a ui-sref="links">Links</a></li>
         <!-- <li ng-show="user.isAuthenticated"><a ui-sref="conversations">Conversations</a></li> -->
         <li ng-hide="user.isAuthenticated"><a ui-sref="login" class="login">Login</a></li>
-        <li class="dropdown hidden-xs" dropdown>
+        <li class="dropdown hidden-xs" dropdown ng-show="user.fullName !== ''">
           <a class="dropdown-toggle" id="dropdownWithImg"
             data-toggle="dropdown" 
             role="button" 
